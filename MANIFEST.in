@@ -1,0 +1,3 @@
+include README.md
+global-include *.html *.csr *.key *.pem *.xml
+global-exclude *.pyc
