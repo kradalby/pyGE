@@ -31,5 +31,5 @@ setup(
     long_description='\n\n'.join([read('README.md')]),
     test_suite = 'tests',
     install_requires=reqs,
-    packages=['pyGE'],
+    py_modules=['pyGE'],
 )
