@@ -1,7 +1,11 @@
 from pyGE import GE
 import pickle
 
-ge = GE('pp25', 'pp25', 'SECRET')
+ge = GE(
+    party='pp25',
+    user='pp25',
+    password='SECRET'
+)
 
 old = pickle.load(open('crewdump.pickle', 'rb'))
 now = ge.get_crew()

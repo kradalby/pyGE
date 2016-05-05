@@ -15,7 +15,7 @@ def read(*rnames):
 
 setup(
     name = "pyGE",
-    version = "0.0.1",
+    version = "0.0.3",
     description = "Small wrapper around some Geekevents API endpoints",
     author = "Kristoffer Dalby",
     author_email = "kradalby@kradalby.no",
