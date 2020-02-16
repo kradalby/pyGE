@@ -3,14 +3,12 @@ import os
 from setuptools import setup
 from setuptools import find_packages
 
-try: # for pip >= 10
-    from pip._internal.req import parse_requirements
-except ImportError: # for pip <= 9.0.3
-    from pip.req import parse_requirements
+def parse_requirements(filename):
+    """ load requirements from a pip requirements file """
+    lineiter = (line.strip() for line in open(filename))
+    return [line for line in lineiter if line and not line.startswith("#")]
 
-install_reqs = parse_requirements(os.path.join(os.path.dirname(__file__), "requirements", "base.txt"), session=False)
-
-reqs = [str(ir.req) for ir in install_reqs]
+install_reqs = parse_requirements(os.path.join(os.path.dirname(__file__), "requirements", "base.txt"))
 
 
 def read(*rnames):
@@ -34,6 +32,6 @@ setup(
         ],
     long_description='\n\n'.join([read('README.md')]),
     test_suite = 'tests',
-    install_requires=reqs,
+    install_requires=install_reqs,
     py_modules=['pyGE'],
 )
