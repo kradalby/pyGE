@@ -11,7 +11,7 @@ class GE:
         if password is None:
             raise TypeError('password is not set')
 
-        self.BASEURL = 'https://www.geekevents.org'
+        self.BASEURL = 'https://classic.geekevents.org'
         self.party = party
         self.user = user
         self.password = password
